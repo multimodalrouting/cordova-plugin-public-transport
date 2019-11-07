@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-public-transport-plugin" version="0.1.0">
+  <name>PublicTransport</name>
+  <description>Cordova PublicTransport Plugin</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova, plugin, template</keywords>
+
+  <engines>
+    <engine name="cordova"         version=">=7.1.0"  />
+    <engine name="cordova-android" version=">=5.0.0"  />
+    <engine name="android-sdk"     version=">=28" />
+  </engines>
+
+  <js-module src="www/publictransport.js" name="public-transport">
+    <clobbers target="navigator.publicTransport" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <framework src="src/android/public-transport.gradle" custom="true" type="gradleReference"/>
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="PublicTransport" >
+        <param name="android-package" value="de.applant.cordova.plugin.public-transport.PublicTransportPlugin"/>
+        <param name="onload" value="true"/>
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </config-file>
+
+    <resource-file src="src/android/libs/schildbach" target="../../libs/schildbach" />
+
+
+    <source-file src="src/android/GHAsyncTask.java" target-dir="src/de/applant/cordova/plugin/publictransport" />
+    <source-file src="src/android/PublicTransportPlugin.java" target-dir="src/de/applant/cordova/plugin/publictransport" />
+
+  </platform>
+
+</plugin>

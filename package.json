@@ -1,0 +1,20 @@
+{
+    "version": "0.1.1",
+    "name": "cordova-graphhopper-plugin",
+    "cordova_name": "Graphhopper Cordova Plugin",
+    "description": "makes graphhopper offline routing available to cordova android applications",
+    "license": "Apache 2.0",
+    "author": {
+        "name": "Winzlieb",
+        "email": "winzlieb@c3d2.de"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/multimodalrouting/cordova-graphhopper-plugin.git"
+    },
+    "keywords": [
+        "cordova",
+        "plugin",
+        "graphhopper"
+    ]
+}
